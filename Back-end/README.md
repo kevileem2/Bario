@@ -4,6 +4,6 @@
 
 ###### Technologies
 
-1. Laravel
+1. Laravel 5.8
 2. PHP
 3. Blade
