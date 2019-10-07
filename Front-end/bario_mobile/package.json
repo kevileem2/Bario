@@ -7,17 +7,10 @@
     "web": "expo start --web",
     "eject": "expo eject"
   },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "dependencies": {
+    "@react-native-community/eslint-config": "0.0.5",
     "@types/styled-components": "^4.1.19",
     "expo": "^35.0.0",
-    "husky": "^3.0.8",
-    "lint-staged": "^9.4.1",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
@@ -31,6 +24,10 @@
     "@typescript-eslint/parser": "^2.3.2",
     "babel-preset-expo": "^7.0.0",
     "eslint": "^6.5.1",
+    "eslint-config-airbnb-typescript": "^5.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "typescript": "^3.4.5"
   },
