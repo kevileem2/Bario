@@ -26,15 +26,15 @@ This is the front-end directory for the Bario App. The front-end consists of a m
 
 ```terminal
 
-yarn install
+npm i
 
 ```
 
-2 Start expo
+2 Start development server
 
 ```terminal
 
-yarn run start
+npm start
 
 ```
 
