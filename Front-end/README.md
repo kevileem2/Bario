@@ -1,25 +1,32 @@
 # Bario Front-end Directory
 
-This is the front-end directory for the Bario App
+This is the front-end directory for the Bario App. The front-end consists of a mobile and a web application.
 
 ## Technologies
 
-1. REACT (Native)
-2. Nodejs
-3. npm
-4. yarn
+### Web
+
+1. React
+2. Node.js
+3. Typescript
+4. Yarn
+
+### Mobile
+
+1. React Native
+2. Node.js
+3. Typescript
+4. Yarn
 
 ## Setup
 
 ### Web
 
-### Mobile
-
 1 Install dependencies
 
 ```terminal
 
-npm install
+yarn install
 
 ```
 
@@ -27,6 +34,24 @@ npm install
 
 ```terminal
 
-npm start
+yarn run start
+
+```
+
+### Mobile
+
+1 Install dependencies
+
+```terminal
+
+yarn install
+
+```
+
+2 Start expo
+
+```terminal
+
+yarn run start
 
 ```
