@@ -1,0 +1,30 @@
+const common = {
+  primary: "#56A9DE",
+  darkPrimary: "#1C89BF",
+  accent: `#95C11A`,
+  error: "#DF0024",
+  border: "#e0e0e0",
+  lightGray: "rgba(0,0,0,0.2)",
+  hintText: "rgba(0,0,0,0.40)",
+  primaryText: "rgba(0,0,0,0.87)",
+  secondaryText: "rgba(0,0,0,0.6)",
+  primaryTextLight: "#fff",
+  secondaryTextLight: "rgba(255,255,255,0.5)",
+  background: "#f2fcff",
+  backgroundGray: "rgba(0,0,0,0.05)",
+  warning: "#ff6100",
+  warningLight: "#fff45e",
+  white: "#FFF",
+  black: "#080808",
+  red: "#FF074B",
+  lightRed: "#FF1F6A",
+  salmon: "#FF5858",
+  gradientColorStart: "#4C60C6",
+  gradientColorEnd: "#00FFFF",
+  purple: "#E21ABA",
+  darkpurple: "#8238E3",
+  cyan: "#09C6FF",
+  green: "#A1FF9A"
+}
+
+export default common

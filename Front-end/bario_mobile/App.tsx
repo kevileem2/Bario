@@ -1,6 +1,8 @@
-import React from "react"
+import React, { Component } from "react"
 import Main from "./app/main"
 
-const App: React.FC = () => <Main />
-
-export default App
+export default class App extends Component {
+  render() {
+    return <Main />
+  }
+}
