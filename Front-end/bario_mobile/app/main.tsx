@@ -1,19 +1,15 @@
 //React imports
-import React from 'react'
-import { View} from "react-native"
-
+import React from "react"
+import BackgroundImage from "./shared/backgroundImage/BackgroundImage"
 
 /**
  * @class Main
  * Root of App, this is used to not directly edit the 'App.js' file in the root folder
  */
-const Main: React.FC = () => {
-
+export default () => {
   return (
-    <View>
-
-    </View>
+    <BackgroundImage
+      source={require("./assets/belfort-background.jpg")}
+    ></BackgroundImage>
   )
 }
-
-export default Main
