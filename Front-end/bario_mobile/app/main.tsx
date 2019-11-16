@@ -4,6 +4,8 @@ import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
 
+import AppNavigator from "../navigation/AppNavigator";
+
 /**
  * @class Main
  * Root of App, this is used to not directly edit the 'App.js' file in the root folder
@@ -31,6 +33,7 @@ export default () => {
   } else {
     return (
       <View style={styles.container}>
+        <AppNavigator />
         {Platform.OS === "ios" && <StatusBar barStyle="default" />}
       </View>
     );

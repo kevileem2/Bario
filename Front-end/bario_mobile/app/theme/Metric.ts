@@ -1,6 +1,6 @@
-import { Dimensions, Platform, StatusBar } from "react-native"
+import { Dimensions, Platform, StatusBar } from "react-native";
 
-const { width, height } = Dimensions.get("window")
+const { width, height } = Dimensions.get("window");
 
 const metrics = {
   tinyMargin: 4,
@@ -13,6 +13,6 @@ const metrics = {
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
   statusBarHeight: Platform.OS === "ios" ? 20 : StatusBar.currentHeight || 24
-}
+};
 
-export default metrics
+export default metrics;
