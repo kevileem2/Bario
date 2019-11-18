@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
+import React, { Component } from "react"
+import { View, Text, Button } from "react-native"
 
 /**
  * Sign in or sign up
@@ -16,5 +16,5 @@ export const AuthScreen = ({ navigation }) => {
         onPress={() => navigation.navigate("Main")}
       />
     </View>
-  );
-};
+  )
+}

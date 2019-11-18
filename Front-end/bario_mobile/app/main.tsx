@@ -1,10 +1,10 @@
 // React imports
-import React, { useState } from "react";
-import { Platform, StatusBar, StyleSheet, View } from "react-native";
-import { AppLoading } from "expo";
-import * as Font from "expo-font";
+import React, { useState } from "react"
+import { Platform, StatusBar, StyleSheet, View } from "react-native"
+import { AppLoading } from "expo"
+import * as Font from "expo-font"
 
-import AppNavigator from "../navigation/AppNavigator";
+import AppNavigator from "./navigation/AppNavigator"
 
 /**
  * @class Main
@@ -12,15 +12,15 @@ import AppNavigator from "../navigation/AppNavigator";
  */
 
 export default () => {
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true)
   const _loadResourcesAsync = async () => {
     await Promise.all([
       Font.loadAsync({
-        Inter: require("../assets/fonts/Inter-Regular.ttf"),
-        InterBold: require("../assets/fonts/Inter-Bold.ttf")
+        Inter: require("./assets/fonts/Inter-Regular.ttf"),
+        InterBold: require("./assets/fonts/Inter-Bold.ttf")
       })
-    ]);
-  };
+    ])
+  }
 
   if (isLoading) {
     return (
@@ -29,16 +29,16 @@ export default () => {
         onFinish={() => setLoading(false)}
         onError={console.warn}
       />
-    );
+    )
   } else {
     return (
       <View style={styles.container}>
         <AppNavigator />
         {Platform.OS === "ios" && <StatusBar barStyle="default" />}
       </View>
-    );
+    )
   }
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#fff"
   }
-});
+})
