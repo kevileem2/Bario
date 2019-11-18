@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\SocialServices;
+use \Validator;
 
 
 class SocialServicesController extends Controller
@@ -28,7 +29,29 @@ class SocialServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
+        $rules = [
+            'name'          =>      'required|min:3',
+            'description'   =>      'required|min:3',
+            'link'          =>      'min:3',
+            'phone'         =>      'required|min:3',
+            'address'       =>      'required|min:3',
+            'email'         =>      'required|min:3',
+            'image.*'       =>      'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'hours'         =>      'min:3'   
+        ];
+
+        $validator = Validator::make($request->all(),$rules); 
+
+        if($validator->fails())
+        {
+            return response()->json($validator->errors(),400);
+        }
+
+        $socialService = SocialServices::create($request->all());
+
+        return response()->json($socialService,201);
+
     }
 
     /**
@@ -38,8 +61,16 @@ class SocialServicesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {  
+        $socialService = SocialServices::find($id);
+
+        if(is_null($socialService)){
+
+            return response()->json(["message"=>"Record not Found!"],404);
+
+        }
+
+        return response()->json($socialService,200);
     }
 
     /**
@@ -50,8 +81,36 @@ class SocialServicesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        $rules = [
+            'name'          =>      'required|numeric',
+            'description'   =>      'required|min:3',
+            'link'          =>      'min:3',
+            'phone'         =>      'required|min:3',
+            'address'       =>      'required|min:3',
+            'email'         =>      'required|min:3',
+            'image.*'       =>      'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'hours'         =>      'min:3'   
+        ];
+
+        $validator = Validator::make($request->all(),$rules); 
+
+        if($validator->fails())
+        {
+            return response()->json($validator->errors(),400);
+        }
+        
+        $socialService = SocialServices::find($id);
+
+        if(is_null($socialService))
+        {
+            return response()->json(["message"=>"Record not Found!"],404);
+        }
+
+        $socialService->update($request->all());
+
+        return response()->json($socialService,200);
+
     }
 
     /**
@@ -62,6 +121,15 @@ class SocialServicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $socialService = SocialServices::find($id);
+
+        if(is_null($socialService))
+        {
+            return response()->json(["message"=>"Record not Found!"],404);
+        }
+
+        $socialService->delete();
+
+        return respone()->json('null',204);
     }
 }
