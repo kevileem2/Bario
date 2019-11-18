@@ -1,5 +1,5 @@
 import React from "react"
-import { StyledBackgroundImage, StyledBackgroundContainer } from "./component"
+import { StyledBackgroundImage } from "./component"
 import { ImageSourcePropType } from "react-native"
 
 interface backGroundImageProps {
@@ -11,8 +11,6 @@ export default ({
   children
 }: React.PropsWithChildren<backGroundImageProps>) => {
   return (
-    <StyledBackgroundContainer>
-      <StyledBackgroundImage source={source}>{children}</StyledBackgroundImage>
-    </StyledBackgroundContainer>
+    <StyledBackgroundImage source={source}>{children}</StyledBackgroundImage>
   )
 }

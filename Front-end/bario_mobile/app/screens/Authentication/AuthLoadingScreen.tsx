@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Text, Button } from "react-native";
+import React from "react"
+import { View, Text, Button } from "react-native"
 
 /**
  * Check if the user is authenticated
@@ -15,5 +15,5 @@ export const AuthLoadingScreen = ({ navigation }) => {
         onPress={() => navigation.navigate("Auth")}
       />
     </View>
-  );
-};
+  )
+}
