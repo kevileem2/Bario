@@ -1,13 +1,16 @@
 import styled from "styled-components"
-import { TouchableHighlight, View, Text } from "react-native"
-import { Colors, Metrics } from "../../theme"
+import { View, TouchableHighlight } from "react-native"
+import { Colors } from "../../../theme"
 import { MaterialCommunityIcons } from "react-native-vector-icons"
 
-export const Container = styled(View)`
+export const ButtonContainer = styled(View)`
   flex: 1;
   justify-content: center;
-  margin-left: ${Metrics.largeMargin};
 `
+
+interface ButtonProps {
+  marginLeft?: number
+}
 
 export const Button = styled(TouchableHighlight)`
   align-self: flex-start;
@@ -16,7 +19,10 @@ export const Button = styled(TouchableHighlight)`
   width: 75;
   height: 75;
   border-radius: 50;
+  margin-left: ${({ marginLeft }: ButtonProps) =>
+    marginLeft ? marginLeft : 0};
   background-color: ${Colors.red};
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
 `
 
 export const Icon = styled(MaterialCommunityIcons)`
