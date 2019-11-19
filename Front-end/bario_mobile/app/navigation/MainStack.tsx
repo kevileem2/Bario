@@ -1,9 +1,11 @@
 import React from "react"
-import { createBottomTabNavigator } from "react-navigation-tabs"
 import { createStackNavigator } from "react-navigation-stack"
 
 import HomeScreen from "../screens/HomeScreen"
 import EventScreen from "../screens/EventScreen"
+import Profile from "../screens/Profile"
+import Calender from "../screens/Calender"
+import SocialService from "../screens/SocialService"
 
 /**
  * Main app/navigation stack for authenticated users
@@ -11,11 +13,18 @@ import EventScreen from "../screens/EventScreen"
 
 export default createStackNavigator(
   {
-    HomeScreen,
-    EventScreen
+    HomeScreen: {
+      screen: HomeScreen,
+      navigationOptions: {
+        headerShown: false
+      }
+    },
+    EventScreen,
+    Profile,
+    Calender,
+    SocialService
   },
   {
-    initialRouteName: "HomeScreen",
-    headerMode: "none"
+    initialRouteName: "HomeScreen"
   }
 )

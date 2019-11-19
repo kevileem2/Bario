@@ -16,7 +16,7 @@ export default createAppContainer(
       Main: MainStack
     },
     {
-      initialRouteName: "Main"
+      initialRouteName: "Auth"
     }
   )
 )
