@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { View, TouchableHighlight } from "react-native"
+import { View, TouchableHighlight, Animated } from "react-native"
 import { Colors } from "../../../theme"
 import { MaterialCommunityIcons } from "react-native-vector-icons"
 
@@ -12,7 +12,9 @@ interface ButtonProps {
   marginLeft?: number
 }
 
-export const Button = styled(TouchableHighlight)`
+export const Button = styled(
+  Animated.createAnimatedComponent(TouchableHighlight)
+)`
   align-self: flex-start;
   align-items: center;
   justify-content: center;

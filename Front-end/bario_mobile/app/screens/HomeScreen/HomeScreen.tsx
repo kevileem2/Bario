@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { BackgroundImage } from "../../shared"
 import { Container, AdditionalNavigationButtonsContainer } from "./components"
 import { Dimensions } from "react-native"
@@ -8,23 +8,27 @@ import { Metrics } from "../../theme"
 export default ({ navigation }) => {
   const [navigationButtonPressed, setNavigationButtonPressed] = useState(false)
 
-  useEffect(() => {
-    navigationButtonPressed
-      ? showAdditionalNavigation()
-      : hideAdditionalNavigation()
-  }, [navigationButtonPressed])
-
   const onPressNavigationButton = () => {
     setNavigationButtonPressed(prevState => !prevState)
   }
 
   const onPressEventScreen = () => {
+    setNavigationButtonPressed(prevState => !prevState)
     navigation.navigate("EventScreen")
   }
 
-  const showAdditionalNavigation = () => {}
-
-  const hideAdditionalNavigation = () => {}
+  const onPressProfileScreen = () => {
+    setNavigationButtonPressed(prevState => !prevState)
+    navigation.navigate("Profile")
+  }
+  const onPressCalenderScreen = () => {
+    setNavigationButtonPressed(prevState => !prevState)
+    navigation.navigate("Calender")
+  }
+  const onPressSocialServiceScreen = () => {
+    setNavigationButtonPressed(prevState => !prevState)
+    navigation.navigate("SocialService")
+  }
 
   return (
     <Container>
@@ -48,17 +52,17 @@ export default ({ navigation }) => {
             iconName="map-marker-radius"
           />
           <NavigationButton
-            onPress={onPressEventScreen}
+            onPress={onPressCalenderScreen}
             iconName="calendar"
             marginLeft={Metrics.largeMargin * 3}
           />
           <NavigationButton
-            onPress={onPressEventScreen}
+            onPress={onPressProfileScreen}
             iconName="account"
             marginLeft={Metrics.largeMargin * 3}
           />
           <NavigationButton
-            onPress={onPressEventScreen}
+            onPress={onPressSocialServiceScreen}
             iconName="information"
           />
         </AdditionalNavigationButtonsContainer>
