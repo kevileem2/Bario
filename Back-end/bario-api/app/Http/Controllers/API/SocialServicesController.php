@@ -17,8 +17,9 @@ class SocialServicesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return response()->json(SocialServices::get(),200);
+    {   
+        $socialServicesList = SocialServices::paginate(10);
+        return response()->json($socialServicesList,200);
     }
 
     /**
@@ -46,6 +47,20 @@ class SocialServicesController extends Controller
         if($validator->fails())
         {
             return response()->json($validator->errors(),400);
+        }
+
+        if ($request->hasFile('image'))
+        {
+            $fileNameWithExtension = $request->file('image')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExtension, PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $fileName .'_'.time().'.'.$extension;
+
+            $path = $request->file('image')->storeAs('public/socialServices',$fileNameToStore);
+        }
+        else {
+            $fileNameToStore= 'noImage.jpg';
+         
         }
 
         $socialService = SocialServices::create($request->all());

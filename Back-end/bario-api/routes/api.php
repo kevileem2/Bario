@@ -13,16 +13,32 @@ use Illuminate\Http\Request;
 |
 */
 
-
-
-
+/**
+ * users
+ * 
+ */
+/*
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+/*
 
+
+/*
+
+OAuth
 
 Route::group(['middleware' => 'auth:api'], function(){
 
     Route::apiResource('/socialServices','API\SocialServicesController');
     
 });
+*/
+
+/**
+ * Basic auth 
+ */
+
+Route::apiResource('/socialServices','API\SocialServicesController');
+
+Route::post('file/SocialServicesImage','FileManagementController@SocialServicesImageUpload');
