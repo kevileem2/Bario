@@ -1,7 +1,7 @@
 import React from "react"
 import Main from "./app/main"
 
-const App: React.FC = (): JSX.Element => {
+const App: React.SFC = (): JSX.Element => {
   return <Main />
 }
 
