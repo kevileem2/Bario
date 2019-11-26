@@ -33,7 +33,7 @@ export default ({ navigation }) => {
   return (
     <Container>
       <BackgroundImage
-        source={require("../../assets/belfort-background.jpg")}
+        source={require("_assets/belfort-background.jpg")}
       />
       <NavigationButton
         isActive={navigationButtonPressed}
