@@ -5,5 +5,20 @@ module.exports = {
     "prettier",
     "prettier/@typescript-eslint",
     "prettier/react"
-  ]
+  ],
+  plugins: ['import'],
+	settings: {
+		'import/resolver': {
+			node: {
+				paths: ['app'],
+				alias: {
+					_assets: './app/assets',
+					_shared: './app/shared',
+					_screens: './app/screens',
+					_navigation: './app/navigation',
+					_theme: './app/theme',
+				},
+			},
+		},
+	},
 }
