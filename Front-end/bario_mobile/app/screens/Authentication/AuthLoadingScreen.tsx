@@ -1,5 +1,7 @@
 import React from "react"
-import { View, Text, Button } from "react-native"
+import { View, Button } from "react-native"
+
+import { Text } from '../../shared'
 
 /**
  * Check if the user is authenticated
@@ -9,7 +11,7 @@ import { View, Text, Button } from "react-native"
 export const AuthLoadingScreen = ({ navigation }) => {
   return (
     <View>
-      <Text>Auth loading</Text>
+      <Text type="largeText">Auth loading</Text>
       <Button
         title="Skip auth loading screen"
         onPress={() => navigation.navigate("Auth")}
