@@ -1,7 +1,8 @@
 import styled from "styled-components"
-import { TouchableHighlight, View, Text } from "react-native"
+import { TouchableHighlight, View } from "react-native"
 import { Colors, Metrics } from "../../theme"
 import { MaterialCommunityIcons } from "react-native-vector-icons"
+
 
 export const Container = styled(View)`
   flex: 1;

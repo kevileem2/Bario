@@ -1,10 +1,12 @@
 import React from "react"
-import { Text, View } from "react-native"
+import { View } from "react-native"
+
+import { Text } from '../../../shared'
 
 export default () => {
   return (
     <View style={{ flex: 1 }}>
-      <Text>Register</Text>
+      <Text type='title'>Register</Text>
     </View>
   )
 }

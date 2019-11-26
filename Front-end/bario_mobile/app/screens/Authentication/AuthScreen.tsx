@@ -1,5 +1,8 @@
 import React, { Component } from "react"
-import { View, Text, Button } from "react-native"
+import { View, Button } from "react-native"
+
+
+import { Text } from '../../shared'
 
 /**
  * Sign in or sign up
@@ -8,9 +11,9 @@ import { View, Text, Button } from "react-native"
 export const AuthScreen = ({ navigation }) => {
   return (
     <View>
-      <Text>Auth screen</Text>
-      <Text>Sign In</Text>
-      <Text>Sign Up</Text>
+      <Text type="title">Auth screen</Text>
+      <Text type="subtitle">Sign in</Text>
+      <Text type="subtitle">Sign up</Text>
       <Button
         title="Authenticate"
         onPress={() => navigation.navigate("Main")}

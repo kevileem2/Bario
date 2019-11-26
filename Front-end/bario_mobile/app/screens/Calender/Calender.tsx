@@ -1,11 +1,12 @@
 import React from "react"
-import { Text } from "react-native"
 import { Container } from "./components"
+
+import { Text } from "../../shared"
 
 export default ({ navigation }) => {
   return (
     <Container>
-      <Text>Dashboard</Text>
+      <Text type='title'>Dashboard</Text>
     </Container>
   )
 }
