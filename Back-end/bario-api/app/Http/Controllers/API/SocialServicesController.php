@@ -18,7 +18,7 @@ class SocialServicesController extends Controller
      */
     public function index()
     {   
-        $socialServicesList = SocialServices::paginate(10);
+        $socialServicesList = SocialServices::paginate(4); // Max 4 services per page
         return response()->json($socialServicesList,200);
     }
 
@@ -98,7 +98,7 @@ class SocialServicesController extends Controller
     public function update(Request $request, $id)
     {   
         $rules = [
-            'name'          =>      'required|numeric',
+            'name'          =>      'required|min:3',
             'description'   =>      'required|min:3',
             'link'          =>      'min:3',
             'phone'         =>      'required|min:3',

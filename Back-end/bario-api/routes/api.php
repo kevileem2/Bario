@@ -41,4 +41,7 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 Route::apiResource('/socialServices','API\SocialServicesController');
 
+Route::apiResource('/categories','API\CategoriesController');
+Route::apiResource('/events','API\EventsController');
+
 Route::post('file/SocialServicesImage','FileManagementController@SocialServicesImageUpload');
