@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { View, TouchableOpacity, StyleSheet, FlatList, Platform, ActivityIndicator } from 'react-native'
-import { Container } from "./components"
+import { Container, List, ListItem } from "./components"
 import json from './data.json'
 import { Title, Subtitle, Text } from '_theme/typography'
 
@@ -27,10 +27,10 @@ export default ({ navigation }) => {
       <Text>{json.current_page}</Text>
       {isError && <Text>Something went wrong</Text>}
       {isLoading ? <ActivityIndicator /> : (
-        <FlatList data={data} keyExtractor={item => item.id.toString()} renderItem={({ item }) => (
-          <View key={item.id}>
-            <Subtitle>{item.name}</Subtitle>
-          </View>
+        <List data={data} keyExtractor={item => item.id.toString()} renderItem={({ item }) => (
+          <ListItem key={item.id}>
+            <Subtitle color={"#fff"}>{item.name}</Subtitle>
+          </ListItem>
         )} />
       )}
     </Container>

@@ -3,13 +3,13 @@ import { Dimensions, Platform, StatusBar } from "react-native";
 const { width, height } = Dimensions.get("window");
 
 const metrics = {
-  tinyMargin: 4,
-  smallMargin: 8,
-  baseMargin: 16,
-  halfLargeMargin: 12,
-  largeMargin: 24,
-  doubleLargeMargin: 48,
-  roundness: 4,
+  tinyMargin: '4px',
+  smallMargin: '8px',
+  baseMargin: '16px',
+  halfLargeMargin: '12px',
+  largeMargin: '24px',
+  doubleLargeMargin: '48px',
+  roundness: '4px',
   screenWidth: width < height ? width : height,
   screenHeight: width < height ? height : width,
   statusBarHeight: Platform.OS === "ios" ? 20 : StatusBar.currentHeight || 24
