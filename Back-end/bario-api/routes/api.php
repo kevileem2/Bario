@@ -43,5 +43,6 @@ Route::apiResource('/socialServices','API\SocialServicesController');
 
 Route::apiResource('/categories','API\CategoriesController');
 Route::apiResource('/events','API\EventsController');
+Route::apiResource('/tags','API\TagsController');
 
 Route::post('file/SocialServicesImage','FileManagementController@SocialServicesImageUpload');
