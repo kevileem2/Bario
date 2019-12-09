@@ -1,12 +1,12 @@
 import React from "react"
 import { Container } from "./components"
 
-import { Text } from "../../shared"
+import { Title } from "_theme/typography"
 
 export default ({ navigation }) => {
   return (
     <Container>
-      <Text type='title'>Dashboard</Text>
+      <Title>Dashboard</Title>
     </Container>
   )
 }

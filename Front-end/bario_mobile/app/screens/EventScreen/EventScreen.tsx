@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { View, Button } from "react-native"
 
-import { Text } from '../../shared'
+import { Title } from '_theme/typography'
 
 /**
  * Event Screen
@@ -10,7 +10,7 @@ import { Text } from '../../shared'
 export default ({ navigation }) => {
   return (
     <View>
-      <Text type="title">Events</Text>
+      <Title>Events</Title>
     </View>
   )
 }
