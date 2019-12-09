@@ -1,8 +1,5 @@
-import React, { Component } from "react"
+import React from "react"
 import { View, Button } from "react-native"
-
-
-import { Text } from '../../shared'
 
 /**
  * Sign in or sign up
@@ -11,12 +8,18 @@ import { Text } from '../../shared'
 export const AuthScreen = ({ navigation }) => {
   return (
     <View>
-      <Text type="title">Auth screen</Text>
-      <Text type="subtitle">Sign in</Text>
-      <Text type="subtitle">Sign up</Text>
       <Button
-        title="Authenticate"
-        onPress={() => navigation.navigate("Main")}
+        title="Sign in"
+        onPress={() => navigation.navigate("SignIn")}
+      >
+      </Button>
+      <Button
+        title="Sign up"
+        onPress={() => navigation.navigate("SignUp")}
+      />
+      <Button
+        title="Skip"
+        onPress={() => navigation.navigate("HomeScreen")}
       />
     </View>
   )
