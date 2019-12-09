@@ -24,6 +24,7 @@ export default ({
         onPress={onPress}
         underlayColor={Colors.red}
         marginLeft={marginLeft}
+        isPrimary={isPrimary}
       >
         <Icon size={isPrimary ? 45 : 35} name={isActive ? "close" : iconName} />
       </Button>

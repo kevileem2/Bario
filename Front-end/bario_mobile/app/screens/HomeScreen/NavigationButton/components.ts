@@ -10,6 +10,7 @@ export const ButtonContainer = styled(View)`
 
 interface ButtonProps {
   marginLeft?: number
+  isPrimary?: boolean
 }
 
 export const Button = styled(
@@ -18,8 +19,8 @@ export const Button = styled(
   align-self: flex-start;
   align-items: center;
   justify-content: center;
-  width: 75;
-  height: 75;
+  width: ${({ isPrimary }: ButtonProps) => (isPrimary ? 70 : 65)};
+  height: ${({ isPrimary }: ButtonProps) => (isPrimary ? 70 : 65)};
   border-radius: 50;
   margin-left: ${({ marginLeft }: ButtonProps) =>
     marginLeft ? marginLeft : 0};
