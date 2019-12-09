@@ -8,7 +8,7 @@ const common = {
   hintText: "rgba(0,0,0,0.40)",
   primaryText: "rgba(0,0,0,0.87)",
   secondaryText: "rgba(0,0,0,0.6)",
-  primaryTextLight: "#fff",
+  primaryTextLight: "rgba(255,255,255,1)",
   secondaryTextLight: "rgba(255,255,255,0.5)",
   background: "#f2fcff",
   backgroundGray: "rgba(0,0,0,0.05)",
