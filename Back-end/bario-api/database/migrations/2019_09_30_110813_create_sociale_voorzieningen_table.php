@@ -16,11 +16,12 @@ class CreateSocialeVoorzieningenTable extends Migration
         Schema::create('sociale_voorzieningen', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('description');
-            $table->string('link');
-            $table->string('phone');
-            $table->string('address');
-            $table->string('hours');
+            $table->text('description');
+            $table->string('link')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('email')->nullable();
+            $table->string('hours')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });
