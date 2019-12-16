@@ -1,26 +1,29 @@
 import React from "react"
-import { View, Button } from "react-native"
+import { View } from "react-native"
+import Button from '_shared/Button'
 
 /**
  * Sign in or sign up
  */
 
-export const AuthScreen = ({ navigation }) => {
-  return (
-    <View>
-      <Button
-        title="Sign in"
-        onPress={() => navigation.navigate("SignIn")}
-      >
-      </Button>
-      <Button
-        title="Sign up"
-        onPress={() => navigation.navigate("SignUp")}
-      />
-      <Button
-        title="Skip"
-        onPress={() => navigation.navigate("HomeScreen")}
-      />
+export const AuthScreen = ({ navigation }) =>
+  <View style={{ flex: 1 }}>
+    <View style={{ flex: 6 }}>
     </View>
-  )
-}
+    <Button
+      icon='log-in'
+      text="Sign in"
+      onPress={() => navigation.navigate("SignIn")}
+    >
+    </Button>
+    <Button
+      icon='user-plus'
+      text="Sign up"
+      onPress={() => navigation.navigate("SignUp")}
+    />
+    <Button
+      isLoading={true}
+      text="Skip for now"
+      onPress={() => navigation.navigate("HomeScreen")}
+    />
+  </View >

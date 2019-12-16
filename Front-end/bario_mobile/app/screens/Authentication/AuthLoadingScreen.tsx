@@ -15,7 +15,7 @@ export const AuthLoadingScreen = ({ navigation }) => {
       let authenticated = false
       setTimeout(() => {
         authenticated ? navigation.navigate('HomeScreen') : navigation.navigate('Auth')
-      }, 3000);
+      }, 1000);
     }
     checkIfAuthenticated()
   }, [])
