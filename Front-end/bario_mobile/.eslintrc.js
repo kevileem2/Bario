@@ -6,6 +6,11 @@ module.exports = {
     "prettier/@typescript-eslint",
     "prettier/react"
   ],
+   "env": {
+   "node": true,
+   "browser": true,
+   "es6": true
+ },
   plugins: ['import'],
 	settings: {
 		'import/resolver': {
