@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import { BackgroundImage } from "../../shared"
+import { BackgroundImage } from "_shared"
 import { Container, AdditionalNavigationButtonsContainer } from "./components"
 import { Dimensions } from "react-native"
 import NavigationButton from "./NavigationButton/NavigationButton"
-import { Metrics } from "../../theme"
+import { Metrics } from "_theme"
 
 export default ({ navigation }) => {
   const [navigationButtonPressed, setNavigationButtonPressed] = useState(false)

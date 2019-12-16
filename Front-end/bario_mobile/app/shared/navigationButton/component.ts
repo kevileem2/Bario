@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { TouchableHighlight, View } from "react-native"
-import { Colors, Metrics } from "../../theme"
+import { Colors, Metrics } from "_theme"
 import { MaterialCommunityIcons } from "react-native-vector-icons"
 
 
