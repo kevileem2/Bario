@@ -10,6 +10,7 @@ export const Container = styled(View)`
 export const List = styled(FlatList)`
   flex: 1;
   padding: ${Metrics.baseMargin};
+  background-color: ${Colors.white}
 `
 
 export const ListItem = styled(TouchableOpacity)`
@@ -19,4 +20,3 @@ export const ListItem = styled(TouchableOpacity)`
   padding: ${Metrics.baseMargin};
   border-radius: ${Metrics.roundness};
 `
-
