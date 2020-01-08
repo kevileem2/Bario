@@ -13,36 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-/**
- * users
- * 
- */
-/*
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-/*
+    /**
+     * Access Token Authentication
+     */
+    Route::post('/register', 'Api\AuthController@register' );
+    Route::post('/login', 'Api\AuthController@login' );
 
 
-/*
+    Route::apiResource('/socialServices','API\SocialServicesController')->middleware('auth:api');;
+    Route::apiResource('/categories','API\CategoriesController');
+    Route::apiResource('/events','API\EventsController');
+    Route::apiResource('/tags','API\TagsController');
+    Route::post('file/SocialServicesImage','FileManagementController@SocialServicesImageUpload');
 
-OAuth
 
-Route::group(['middleware' => 'auth:api'], function(){
-
-    Route::apiResource('/socialServices','API\SocialServicesController');
-    
-});
-*/
-
-/**
- * Basic auth 
- */
-
-Route::apiResource('/socialServices','API\SocialServicesController');
-
-Route::apiResource('/categories','API\CategoriesController');
-Route::apiResource('/events','API\EventsController');
-Route::apiResource('/tags','API\TagsController');
-
-Route::post('file/SocialServicesImage','FileManagementController@SocialServicesImageUpload');
