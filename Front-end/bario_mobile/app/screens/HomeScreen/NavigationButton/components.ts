@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { View, TouchableHighlight, Animated } from "react-native"
-import { Colors } from "../../../theme"
+import { Colors } from "_theme"
 import { MaterialCommunityIcons } from "react-native-vector-icons"
 
 export const ButtonContainer = styled(View)`

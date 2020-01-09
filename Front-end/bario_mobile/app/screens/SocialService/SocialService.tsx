@@ -1,35 +1,43 @@
 import React, { useState, useEffect } from "react"
-import {
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  FlatList,
-  Platform,
-  ActivityIndicator
-} from "react-native"
-import NavigationHeader from "../../shared/navigationHeader/NavigationHeader"
-import { NavigationStackScreenProps } from "react-navigation-stack"
-import { Container } from "./components"
-import json from "./data.json"
+import { View, ActivityIndicator } from "react-native"
+import { Container, List, ListItem } from "./components"
 import { Title, Subtitle, Text } from "_theme/typography"
+import { Colors } from "_theme"
+
+import { api } from "../../config"
+import NavigationHeader from "../../shared/navigationHeader/NavigationHeader"
 
 export default ({ navigation }) => {
   const [data, setData] = useState([])
+  const [page, setPage] = useState(1)
   const [isLoading, setLoading] = useState(false)
   const [isError, setError] = useState(false)
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // let data = await (await fetch('./data')).json();
-        setData(json.data)
-      } catch (err) {
-        setError(true)
-      }
-      setLoading(false)
-    }
-    fetchData()
+    fetchData(page)
   }, [])
 
+  const fetchData = async (page?: number) => {
+    try {
+      let res = await fetch(`${api.baseUrl}socialServices?page=${page}`, {
+        headers: {
+          "content-type": "application/json",
+          authorization:
+            "Basic aGVrdG9yLm1pc3Bsb25AZ21haWwuY29tOnRlc3RpbmcxMjM="
+        }
+      })
+      let json = await res.json()
+      setData(() => [...data, ...json.data])
+    } catch (err) {
+      console.error(err)
+      setError(true)
+    }
+    setLoading(false)
+  }
+
+  const loadMore = () => {
+    setPage(page + 1)
+    fetchData(page)
+  }
   const handleNavigationPress = () => {
     navigation.navigate("Home")
   }
@@ -47,20 +55,31 @@ export default ({ navigation }) => {
     >
       <Container>
         <Title>Social Services</Title>
-        <Text>{json.current_page}</Text>
-        {isError && <Text>Something went wrong</Text>}
-        {isLoading ? (
-          <ActivityIndicator />
-        ) : (
-          <FlatList
-            data={data}
-            keyExtractor={item => item.id.toString()}
-            renderItem={({ item }) => (
-              <View key={item.id}>
-                <Subtitle>{item.name}</Subtitle>
-              </View>
+        {data.length > 0 && (
+          <View style={{ flex: 1, backgroundColor: "#eee" }}>
+            <Text style={{ position: "absolute" }}>{page}</Text>
+            {isError && <Text>Something went wrong</Text>}
+            {isLoading ? (
+              <ActivityIndicator />
+            ) : (
+              <List
+                data={data}
+                keyExtractor={item => item.id}
+                renderItem={({ item }) => (
+                  <ListItem
+                    style={{
+                      backgroundColor:
+                        item.id % 2 == 0 ? Colors.primary : Colors.darkPrimary
+                    }}
+                  >
+                    <Subtitle color={"#fff"}>{item.name}</Subtitle>
+                  </ListItem>
+                )}
+                onEndThreshold={7}
+                onEndReached={loadMore}
+              />
             )}
-          />
+          </View>
         )}
       </Container>
     </NavigationHeader>
