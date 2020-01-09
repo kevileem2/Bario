@@ -14,27 +14,33 @@ export default ({ navigation }) => {
 
   const onPressEventScreen = () => {
     setNavigationButtonPressed(prevState => !prevState)
-    navigation.navigate("EventScreen")
+    navigation.navigate("Event", {
+      screen: 0
+    })
   }
 
   const onPressProfileScreen = () => {
     setNavigationButtonPressed(prevState => !prevState)
-    navigation.navigate("Profile")
+    navigation.navigate("Profile", {
+      screen: 2
+    })
   }
   const onPressCalenderScreen = () => {
     setNavigationButtonPressed(prevState => !prevState)
-    navigation.navigate("Calender")
+    navigation.navigate("Calender", {
+      screen: 1
+    })
   }
   const onPressSocialServiceScreen = () => {
     setNavigationButtonPressed(prevState => !prevState)
-    navigation.navigate("SocialService")
+    navigation.navigate("SocialService", {
+      screen: 3
+    })
   }
 
   return (
     <Container>
-      <BackgroundImage
-        source={require("_assets/belfort-background.jpg")}
-      />
+      <BackgroundImage source={require("_assets/belfort-background.jpg")} />
       <NavigationButton
         isActive={navigationButtonPressed}
         isPrimary

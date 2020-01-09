@@ -11,16 +11,9 @@ export const AuthScreen = ({ navigation }) => {
       <Button
         title="Sign in"
         onPress={() => navigation.navigate("SignIn")}
-      >
-      </Button>
-      <Button
-        title="Sign up"
-        onPress={() => navigation.navigate("SignUp")}
-      />
-      <Button
-        title="Skip"
-        onPress={() => navigation.navigate("HomeScreen")}
-      />
+      ></Button>
+      <Button title="Sign up" onPress={() => navigation.navigate("SignUp")} />
+      <Button title="Skip" onPress={() => navigation.navigate("Home")} />
     </View>
   )
 }

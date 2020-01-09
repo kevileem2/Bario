@@ -13,18 +13,38 @@ import SocialService from "../screens/SocialService"
 
 export default createStackNavigator(
   {
-    HomeScreen: {
+    Home: {
       screen: HomeScreen,
       navigationOptions: {
         headerShown: false
       }
     },
-    EventScreen,
-    Profile,
-    Calender,
-    SocialService
+    Event: {
+      screen: EventScreen,
+      navigationOptions: {
+        headerShown: false
+      }
+    },
+    Profile: {
+      screen: Profile,
+      navigationOptions: {
+        headerShown: false
+      }
+    },
+    Calender: {
+      screen: Calender,
+      navigationOptions: {
+        headerShown: false
+      }
+    },
+    SocialService: {
+      screen: SocialService,
+      navigationOptions: {
+        headerShown: false
+      }
+    }
   },
   {
-    initialRouteName: "HomeScreen"
+    initialRouteName: "Home"
   }
 )

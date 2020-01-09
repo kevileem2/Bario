@@ -1,8 +1,7 @@
 import styled from "styled-components"
-import { TouchableHighlight, View } from "react-native"
+import { TouchableHighlight, View, Platform } from "react-native"
 import { Colors, Metrics } from "../../theme"
 import { MaterialCommunityIcons } from "react-native-vector-icons"
-
 
 export const Container = styled(View)`
   flex: 1;
@@ -21,7 +20,7 @@ export const Button = styled(TouchableHighlight)`
 `
 
 export const Icon = styled(MaterialCommunityIcons)`
-  margin-top: 2px;
-  margin-left: 1px;
+  margin-top: ${Platform.OS === "ios" ? "2px" : "0px"};
+  margin-left: ${Platform.OS === "ios" ? "1px" : "0px"};
   color: ${Colors.white};
 `
