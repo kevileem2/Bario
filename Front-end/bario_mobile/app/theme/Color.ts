@@ -15,7 +15,9 @@ const common = {
   warning: "#ff6100",
   warningLight: "#fff45e",
   white: "#FFF",
+  emerald: "#029875",
   black: "#080808",
+  dark: "#081B33",
   red: "#FF074B",
   lightRed: "#FF1F6A",
   salmon: "#FF5858",
@@ -24,6 +26,7 @@ const common = {
   purple: "#E21ABA",
   darkpurple: "#8238E3",
   cyan: "#09C6FF",
+  blue: "#779ecb",
   green: "#A1FF9A"
 }
 

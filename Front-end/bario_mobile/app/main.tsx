@@ -1,4 +1,5 @@
 // React imports
+import "react-native-gesture-handler"
 import React, { useState } from "react"
 import { Platform, StatusBar, StyleSheet, View } from "react-native"
 import { AppLoading } from "expo"

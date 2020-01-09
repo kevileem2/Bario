@@ -1,12 +1,32 @@
 import React from "react"
-import { Container } from "./components"
+import { View, Text } from "react-native"
+import NavigationHeader from "../../shared/navigationHeader/NavigationHeader"
+import { NavigationStackScreenProps } from "react-navigation-stack"
 
-import { Title } from '_theme/typography'
+export default ({ navigation }: NavigationStackScreenProps) => {
+  const handleNavigationPress = () => {
+    navigation.navigate("Home")
+  }
 
-export default ({ navigation }) => {
+  const handleLeftFlingGesture = () => {
+    navigation.navigate("SocialService", { screen: 3 })
+  }
+
+  const handleRightFlingGesture = () => {
+    navigation.navigate("Calender", { screen: 1 })
+  }
+
   return (
-    <Container>
-      <Title>Profile</Title>
-    </Container>
+    <NavigationHeader
+      handleNavigationPress={handleNavigationPress}
+      title="Profile"
+      renderBottomTabs
+      onLeftFlingGesture={handleLeftFlingGesture}
+      onRightFlingGesture={handleRightFlingGesture}
+    >
+      <View>
+        <Text>yeet</Text>
+      </View>
+    </NavigationHeader>
   )
 }
