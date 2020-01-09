@@ -34,7 +34,7 @@ export default ({ navigation }) => {
     navigation.navigate("Home")
   }
 
-  const handleLeftFlingGesture = () => {
+  const handleRightFlingGesture = () => {
     navigation.navigate("Profile", { screen: 2 })
   }
 
@@ -43,7 +43,7 @@ export default ({ navigation }) => {
       handleNavigationPress={handleNavigationPress}
       title="Calender"
       renderBottomTabs
-      onLeftFlingGesture={handleLeftFlingGesture}
+      onRightFlingGesture={handleRightFlingGesture}
     >
       <Container>
         <Title>Social Services</Title>

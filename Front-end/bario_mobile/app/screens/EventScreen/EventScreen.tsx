@@ -16,17 +16,12 @@ export default ({ navigation }: NavigationStackScreenProps) => {
     navigation.navigate("Calender", { screen: 1 })
   }
 
-  const handleRightFlingGesture = () => {
-    navigation.navigate("Home")
-  }
-
   return (
     <NavigationHeader
       handleNavigationPress={handleNavigationPress}
       title="Events"
       renderBottomTabs
       onLeftFlingGesture={handleLeftFlingGesture}
-      onRightFlingGesture={handleRightFlingGesture}
     >
       <View>
         <Text>yeet</Text>
