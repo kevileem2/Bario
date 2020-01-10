@@ -136,6 +136,11 @@ class CategoriesController extends Controller
 
         $category->delete();
 
-        return respone()->json('null',204);
+        return response()->json('null',204);
+    }
+
+    public function categoryTags($id) {
+        $tags = Categories::find($id)->categoryTags;
+        return response()->json($tags);
     }
 }

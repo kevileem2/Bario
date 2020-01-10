@@ -12,4 +12,7 @@ class Categories extends Model
         'name'
     ];
 
+    public function categoryTags() {
+        return $this->hasMany('App\Models\Tags', 'category_id', 'id');
+    }
 }

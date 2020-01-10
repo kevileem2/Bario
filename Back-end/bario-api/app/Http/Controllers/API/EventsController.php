@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\Categories;
 use App\Models\Events;
 use \Validator;
 
@@ -172,5 +173,26 @@ class EventsController extends Controller
         $event->delete();
 
         return respone()->json('null',204);
+    }
+
+
+    // Custom functions
+
+    public function getCreator($id) {
+        $creator = events::find($id)->creator;
+        return response()->json($creator);
+        
+    }
+
+    public function getCategory($id) {
+        $category = events::find($id)->eventCategory;
+        return response()->json($category);
+    }
+
+    public function getTags($id) {
+        $category = events::find($id)->eventCategory;
+        $tags = categories::find($category->id)->categoryTags;
+
+        return response()->json($tags);
     }
 }
