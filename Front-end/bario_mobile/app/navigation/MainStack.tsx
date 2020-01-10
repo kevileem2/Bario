@@ -1,8 +1,8 @@
 import React from "react"
 import { createStackNavigator } from "react-navigation-stack"
 
-import HomeScreen from "../screens/HomeScreen"
-import EventScreen from "../screens/EventScreen"
+import Home from "../screens/Home"
+import Event from "../screens/Event"
 import Profile from "../screens/Profile"
 import Calender from "../screens/Calender"
 import SocialService from "../screens/SocialService"
@@ -13,38 +13,16 @@ import SocialService from "../screens/SocialService"
 
 export default createStackNavigator(
   {
-    Home: {
-      screen: HomeScreen,
-      navigationOptions: {
-        headerShown: false
-      }
-    },
-    Event: {
-      screen: EventScreen,
-      navigationOptions: {
-        headerShown: false
-      }
-    },
-    Profile: {
-      screen: Profile,
-      navigationOptions: {
-        headerShown: false
-      }
-    },
-    Calender: {
-      screen: Calender,
-      navigationOptions: {
-        headerShown: false
-      }
-    },
-    SocialService: {
-      screen: SocialService,
-      navigationOptions: {
-        headerShown: false
-      }
-    }
+    Home,
+    Event,
+    Profile,
+    Calender,
+    SocialService
   },
   {
-    initialRouteName: "Home"
+    initialRouteName: "Home",
+    defaultNavigationOptions: {
+      headerShown: false
+    }
   }
 )

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { View, TouchableOpacity, FlatList, Text } from "react-native"
 
-import { Colors, Metrics } from "_theme"
+import { Colors, Metrics } from "../../theme"
 
 export const Container = styled(View)`
   flex: 1;
@@ -10,7 +10,7 @@ export const Container = styled(View)`
 export const List = styled(FlatList)`
   flex: 1;
   padding: ${Metrics.baseMargin};
-  background-color: ${Colors.white}
+  background-color: ${Colors.white};
 `
 
 export const ListItem = styled(TouchableOpacity)`
