@@ -8,19 +8,19 @@ import { View, Button, ActivityIndicator } from "react-native"
  */
 
 export const AuthLoadingScreen = ({ navigation }) => {
-  const [isLoading, setLoading] = useState(true)
+  const [isLoading, setLoading] = useState(false)
 
   useEffect(() => {
     const checkIfAuthenticated = async () => {
-      let authenticated = false
+      let authenticated = true
       setTimeout(() => {
-        authenticated ? navigation.navigate('HomeScreen') : navigation.navigate('Auth')
-      }, 1000);
+        authenticated
+          ? navigation.navigate("Home")
+          : navigation.navigate("Auth")
+      }, 1000)
     }
     checkIfAuthenticated()
   }, [])
 
-  return (
-    isLoading && <ActivityIndicator />
-  )
+  return isLoading && <ActivityIndicator />
 }

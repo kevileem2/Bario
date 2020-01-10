@@ -1,4 +1,4 @@
-import React from "react"
+import React from "React"
 import { StyledBackgroundImage } from "./component"
 import { ImageSourcePropType } from "react-native"
 
