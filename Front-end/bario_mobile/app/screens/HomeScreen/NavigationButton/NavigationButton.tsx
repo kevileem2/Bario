@@ -1,6 +1,6 @@
 import React from "react"
 import { ButtonContainer, Button, Icon } from "./components"
-import { Colors } from "_theme"
+import { Colors } from "../../../theme"
 
 interface Props {
   isActive?: boolean

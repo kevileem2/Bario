@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { View, ActivityIndicator } from "react-native"
 import { Container, List, ListItem } from "./components"
-import { Title, Subtitle, Text } from "_theme/typography"
+import { Title, Subtitle, Text } from "_theme/Typography"
 import { Colors } from "_theme"
 
 import { api } from "../../config"
