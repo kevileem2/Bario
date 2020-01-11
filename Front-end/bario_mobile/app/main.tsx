@@ -1,11 +1,14 @@
 // React imports
 import "react-native-gesture-handler"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import Realm from "realm"
 import { Platform, StatusBar, StyleSheet, View } from "react-native"
 import { AppLoading } from "expo"
 import * as Font from "expo-font"
+import RealmProvider from "./RealmProvider"
 
 import AppNavigator from "./navigation/AppNavigator"
+import { storage } from "./shared"
 
 /**
  * @class Main
@@ -14,6 +17,14 @@ import AppNavigator from "./navigation/AppNavigator"
 
 export default () => {
   const [isLoading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const setUp = async () => {
+      storage.performMigrations()
+    }
+    setUp()
+  }, [])
+
   const _loadResourcesAsync = async () => {
     await Promise.all([
       Font.loadAsync({
@@ -33,10 +44,12 @@ export default () => {
     )
   } else {
     return (
-      <View style={styles.container}>
-        <AppNavigator />
-        {Platform.OS === "ios" && <StatusBar barStyle="default" />}
-      </View>
+      <RealmProvider>
+        <View style={styles.container}>
+          <AppNavigator />
+          {Platform.OS === "ios" && <StatusBar barStyle="default" />}
+        </View>
+      </RealmProvider>
     )
   }
 }

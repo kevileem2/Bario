@@ -119,6 +119,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GCDWebServer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GTMAppAuth.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -155,6 +160,11 @@
 			<false/>
 		</dict>
 		<key>React.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RealmJS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

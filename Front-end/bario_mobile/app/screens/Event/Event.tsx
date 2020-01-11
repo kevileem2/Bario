@@ -1,19 +1,44 @@
 import React, { useState } from "react"
-import { View, Text } from "react-native"
+import Realm from "realm"
+import { View, Text, Button } from "react-native"
 import NavigationHeader from "../../shared/navigationHeader/NavigationHeader"
 import { NavigationStackScreenProps } from "react-navigation-stack"
+import { WithStorageInjectedProps } from "../../utils/dataUtils"
+import storage, { Event } from "../../shared/storage"
 
 /**
  * Event Screen
  */
 
-export default ({ navigation }: NavigationStackScreenProps) => {
+interface Props extends NavigationStackScreenProps, WithStorageInjectedProps {
+  realm: Realm
+  event: Event[]
+}
+
+export default ({ realm, navigation }: Props) => {
   const handleNavigationPress = () => {
     navigation.navigate("Home")
   }
 
   const handleLeftFlingGesture = () => {
     navigation.navigate("Calender", { screen: 1 })
+  }
+
+  const addEventToRealmDatabase = () => {
+    storage.writeTransaction(
+      realmInstance =>
+        realmInstance.create(
+          Event,
+          {
+            guid: "1",
+            name: "Bario's after exams new years Party",
+            location: "Artevelde",
+            description: "Alleen als we erdoor zijn"
+          },
+          Realm.UpdateMode.All
+        ),
+      realm
+    )
   }
 
   return (
@@ -25,6 +50,10 @@ export default ({ navigation }: NavigationStackScreenProps) => {
     >
       <View>
         <Text>yeet</Text>
+        <Button
+          title="add event to realm database!"
+          onPress={addEventToRealmDatabase}
+        />
       </View>
     </NavigationHeader>
   )
