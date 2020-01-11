@@ -31,6 +31,9 @@ use Illuminate\Http\Request;
         Route::get('/socialServices','API\SocialServicesController@index');
         Route::get('/socialServices/{id}','API\SocialServicesController@show');
 
+        Route::get('/News','API\NewsController@index');
+        Route::get('/News/{id}','API\NewsController@show');
+
         Route::get('/categories/{id}/tags','API\CategoriesController@categoryTags');
         Route::get('/categories','API\CategoriesController@index');
         Route::get('/categories/{id}','API\CategoriesController@show');
@@ -54,6 +57,10 @@ use Illuminate\Http\Request;
         Route::post('/socialServices','API\SocialServicesController@store');
         Route::patch('/socialServices/update/{id}','API\SocialServicesController@update');
         Route::delete('/socialServices/delete/{id}','API\SocialServicesController@destroy');
+
+        Route::post('/News','API\NewsController@store');
+        Route::get('/News/{id}','API\NewsController@update');
+        Route::delete('News/{id}','API\NewsController@delete');
 
         Route::post('/categories','API\CategoriesController@store');
         Route::patch('/categories/update/{id}','API\CategoriesController@update');
