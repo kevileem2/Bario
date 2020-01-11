@@ -20,15 +20,6 @@ class TagsController extends Controller
         return response()->json($tagsList,200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -40,17 +31,15 @@ class TagsController extends Controller
     {
         $rules = [
             'name'  =>  'required|min:3',
-            'category_id' => 'required|numeric'  
+            'category_id' => 'required|numeric'
         ];
 
-        $validator = Validator::make($request->all(),$rules); 
+        $validator = Validator::make($request->all(),$rules);
 
         if($validator->fails())
         {
             return response()->json($validator->errors(),400);
         }
-
-        
 
         $tag = Tags::create($request->all());
 
@@ -78,17 +67,6 @@ class TagsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -99,16 +77,16 @@ class TagsController extends Controller
     {
         $rules = [
             'name'  =>  'required|min:3',
-            'category_id' => 'required|numeric'   
+            'category_id' => 'required|numeric'
         ];
 
-        $validator = Validator::make($request->all(),$rules); 
+        $validator = Validator::make($request->all(),$rules);
 
         if($validator->fails())
         {
             return response()->json($validator->errors(),400);
         }
-        
+
         $tag = Tags::find($id);
 
         if(is_null($tag))
