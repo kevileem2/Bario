@@ -4,22 +4,16 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-use App\Models\SocialServices;
-use \Validator;
+use App\Models\News;
 
 
-class SocialServicesController extends Controller
+class NewsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $socialServicesList = SocialServices::paginate(8); // Max 4 services per page
-        return response()->json($socialServicesList, 200);
+        $posts = News::paginate(8);
+        return response()->json($posts, 200);
     }
 
     /**
@@ -30,16 +24,11 @@ class SocialServicesController extends Controller
      */
     public function store(Request $request)
     {
-
         $rules = [
-            'name'          =>      'required|min:3',
-            'description'   =>      'required|min:3',
-            'link'          =>      'min:3',
-            'phone'         =>      'required|min:3',
-            'address'       =>      'required|min:3',
-            'email'         =>      'required|min:3',
-            'image.*'       =>      'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'hours'         =>      'min:3'
+            'title'             =>      'required|min:3',
+            'slug'              =>      'required|min:3',
+            'description'       =>      'min:3',
+            'image.*'           =>      'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -54,14 +43,14 @@ class SocialServicesController extends Controller
             $extension = $request->file('image')->getClientOriginalExtension();
             $fileNameToStore = $fileName . '_' . time() . '.' . $extension;
 
-            $request->file('image')->storeAs('public/socialServices', $fileNameToStore);
+            $request->file('image')->storeAs('public/news', $fileNameToStore);
         } else {
             $fileNameToStore = 'noImage.jpg';
         }
 
-        $socialService = SocialServices::create($request->all());
+        $post = News::create($request->all());
 
-        return response()->json($socialService, 201);
+        return response()->json($post, 201);
     }
 
     /**
@@ -72,14 +61,14 @@ class SocialServicesController extends Controller
      */
     public function show($id)
     {
-        $socialService = SocialServices::find($id);
+        $post = News::find($id);
 
-        if (is_null($socialService)) {
+        if (is_null($post)) {
 
             return response()->json(["message" => "Record not Found!"], 404);
         }
 
-        return response()->json($socialService, 200);
+        return response()->json($post, 200);
     }
 
     /**
@@ -92,14 +81,10 @@ class SocialServicesController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            'name'          =>      'required|min:3',
-            'description'   =>      'required|min:3',
-            'link'          =>      'min:3',
-            'phone'         =>      'required|min:3',
-            'address'       =>      'required|min:3',
-            'email'         =>      'required|min:3',
-            'image.*'       =>      'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'hours'         =>      'min:3'
+            'title'             =>      'required|min:3',
+            'slug'              =>      'required|min:3',
+            'description'       =>      'min:3',
+            'image.*'           =>      'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -108,15 +93,9 @@ class SocialServicesController extends Controller
             return response()->json($validator->errors(), 400);
         }
 
-        $socialService = SocialServices::find($id);
+        $post = News::update($request->all());
 
-        if (is_null($socialService)) {
-            return response()->json(["message" => "Record not Found!"], 404);
-        }
-
-        $socialService->update($request->all());
-
-        return response()->json($socialService, 200);
+        return response()->json($post, 201);
     }
 
     /**
@@ -127,13 +106,13 @@ class SocialServicesController extends Controller
      */
     public function destroy($id)
     {
-        $socialService = SocialServices::find($id);
+        $post = News::find($id);
 
-        if (is_null($socialService)) {
+        if (is_null($post)) {
             return response()->json(["message" => "Record not Found!"], 404);
         }
 
-        $socialService->delete();
+        $post->delete();
 
         return respone()->json('null', 204);
     }

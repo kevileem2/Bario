@@ -21,4 +21,12 @@ class Events extends Model
         'tag_id'
     ];
 
+    public function creator() {
+        return $this->hasOne('App\User', 'id', 'user_id');
+    }
+
+    public function eventCategory() {
+        return $this->hasOne('App\Models\Categories', 'id', 'category_id');
+    }
+
 }

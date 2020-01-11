@@ -21,12 +21,6 @@ class CategoriesController extends Controller
         return response()->json($categoriesList,200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
 
     /**
      * Store a newly created resource in storage.
@@ -36,19 +30,19 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-            
+
         $rules = [
-            'name'  =>  'required|min:3',  
+            'name'  =>  'required|min:3',
         ];
 
-        $validator = Validator::make($request->all(),$rules); 
+        $validator = Validator::make($request->all(),$rules);
 
         if($validator->fails())
         {
             return response()->json($validator->errors(),400);
         }
 
-        
+
 
         $category = Categories::create($request->all());
 
@@ -76,17 +70,6 @@ class CategoriesController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -96,16 +79,16 @@ class CategoriesController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            'name'          =>      'required|min:3'  
+            'name'          =>      'required|min:3'
         ];
 
-        $validator = Validator::make($request->all(),$rules); 
+        $validator = Validator::make($request->all(),$rules);
 
         if($validator->fails())
         {
             return response()->json($validator->errors(),400);
         }
-        
+
         $category = Categories::find($id);
 
         if(is_null($category))
@@ -136,6 +119,11 @@ class CategoriesController extends Controller
 
         $category->delete();
 
-        return respone()->json('null',204);
+        return response()->json('null',204);
+    }
+
+    public function categoryTags($id) {
+        $tags = Categories::find($id)->categoryTags;
+        return response()->json($tags);
     }
 }

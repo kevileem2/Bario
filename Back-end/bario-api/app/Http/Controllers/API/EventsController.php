@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\Categories;
 use App\Models\Events;
 use \Validator;
 
@@ -48,14 +49,14 @@ class EventsController extends Controller
             'price'        =>      'required|numeric',
             'slug'         =>      'required|min:3',
             'image.*'      =>      'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'category_id'  =>      'required|numeric', 
-            'tag_id'        =>     'required|numeric',  
+            'category_id'  =>      'required|numeric',
+            'tag_id'        =>     'required|numeric',
         ];
 
         // TODO
-        // User_id should be the creators id, user_id added to fillable in events modal 
+        // User_id should be the creators id, user_id added to fillable in events modal
 
-        $validator = Validator::make($request->all(),$rules); 
+        $validator = Validator::make($request->all(),$rules);
 
         if($validator->fails())
         {
@@ -73,7 +74,7 @@ class EventsController extends Controller
         }
         else {
             $fileNameToStore= 'noImage.jpg';
-         
+
         }
 
         $events = Events::create($request->all());
@@ -102,17 +103,6 @@ class EventsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -120,7 +110,7 @@ class EventsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {  
+    {
         $rules = [
             'name'         =>      'required|min:3',
             'user_id'      =>      'required|numeric',
@@ -130,17 +120,17 @@ class EventsController extends Controller
             'price'        =>      'required|numeric',
             'slug'         =>      'required|min:3',
             'image.*'      =>      'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'category_id'  =>      'required|numeric', 
-            'tag_id'        =>     'required|numeric',  
+            'category_id'  =>      'required|numeric',
+            'tag_id'        =>     'required|numeric',
         ];
 
-        $validator = Validator::make($request->all(),$rules); 
+        $validator = Validator::make($request->all(),$rules);
 
         if($validator->fails())
         {
             return response()->json($validator->errors(),400);
         }
-        
+
         $event = Events::find($id);
 
         if(is_null($event))
@@ -172,5 +162,26 @@ class EventsController extends Controller
         $event->delete();
 
         return respone()->json('null',204);
+    }
+
+
+    // Custom functions
+
+    public function getCreator($id) {
+        $creator = events::find($id)->creator;
+        return response()->json($creator);
+
+    }
+
+    public function getCategory($id) {
+        $category = events::find($id)->eventCategory;
+        return response()->json($category);
+    }
+
+    public function getTags($id) {
+        $category = events::find($id)->eventCategory;
+        $tags = categories::find($category->id)->categoryTags;
+
+        return response()->json($tags);
     }
 }
