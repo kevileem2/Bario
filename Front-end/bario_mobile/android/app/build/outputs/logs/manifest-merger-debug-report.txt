@@ -6,6 +6,7 @@ INJECTED from /Users/kevinleemans/Bario/Bario/Front-end/bario_mobile/android/app
 INJECTED from /Users/kevinleemans/Bario/Bario/Front-end/bario_mobile/android/app/src/main/AndroidManifest.xml:2:1-362:12
 MERGED from [host.exp.exponent:expoview:35.0.0] /Users/kevinleemans/.gradle/caches/transforms-1/files-1.1/expoview-35.0.0.aar/eefcdf0178fc598420eb05b57f47a3a9/AndroidManifest.xml:2:1-112:12
 MERGED from [org.webkit:android-jsc:r245459] /Users/kevinleemans/.gradle/caches/transforms-1/files-1.1/android-jsc-r245459.aar/a30ff49c66b4329f408a58e036fe5eb6/AndroidManifest.xml:2:1-11:12
+MERGED from [:realm] /Users/kevinleemans/Bario/Bario/Front-end/bario_mobile/node_modules/realm/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:35.0.0] /Users/kevinleemans/.gradle/caches/transforms-1/files-1.1/react-native-35.0.0.aar/925c94dbeadd6aaf7553709c4b48e4ab/AndroidManifest.xml:2:1-13:12
 MERGED from [:unimodules-react-native-adapter] /Users/kevinleemans/Bario/Bario/Front-end/bario_mobile/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:expo-app-loader-provider] /Users/kevinleemans/Bario/Bario/Front-end/bario_mobile/node_modules/expo-app-loader-provider/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
@@ -403,6 +404,8 @@ application
 ADDED from /Users/kevinleemans/Bario/Bario/Front-end/bario_mobile/android/app/src/main/AndroidManifest.xml:48:3-360:17
 MERGED from [host.exp.exponent:expoview:35.0.0] /Users/kevinleemans/.gradle/caches/transforms-1/files-1.1/expoview-35.0.0.aar/eefcdf0178fc598420eb05b57f47a3a9/AndroidManifest.xml:71:5-110:19
 MERGED from [host.exp.exponent:expoview:35.0.0] /Users/kevinleemans/.gradle/caches/transforms-1/files-1.1/expoview-35.0.0.aar/eefcdf0178fc598420eb05b57f47a3a9/AndroidManifest.xml:71:5-110:19
+MERGED from [:realm] /Users/kevinleemans/Bario/Bario/Front-end/bario_mobile/node_modules/realm/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-20
+MERGED from [:realm] /Users/kevinleemans/Bario/Bario/Front-end/bario_mobile/node_modules/realm/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.react:react-native:35.0.0] /Users/kevinleemans/.gradle/caches/transforms-1/files-1.1/react-native-35.0.0.aar/925c94dbeadd6aaf7553709c4b48e4ab/AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.react:react-native:35.0.0] /Users/kevinleemans/.gradle/caches/transforms-1/files-1.1/react-native-35.0.0.aar/925c94dbeadd6aaf7553709c4b48e4ab/AndroidManifest.xml:11:5-20
 MERGED from [:expo-file-system] /Users/kevinleemans/Bario/Bario/Front-end/bario_mobile/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:5-28:19
@@ -933,6 +936,8 @@ MERGED from [host.exp.exponent:expoview:35.0.0] /Users/kevinleemans/.gradle/cach
 MERGED from [host.exp.exponent:expoview:35.0.0] /Users/kevinleemans/.gradle/caches/transforms-1/files-1.1/expoview-35.0.0.aar/eefcdf0178fc598420eb05b57f47a3a9/AndroidManifest.xml:7:5-9:41
 MERGED from [org.webkit:android-jsc:r245459] /Users/kevinleemans/.gradle/caches/transforms-1/files-1.1/android-jsc-r245459.aar/a30ff49c66b4329f408a58e036fe5eb6/AndroidManifest.xml:7:5-9:41
 MERGED from [org.webkit:android-jsc:r245459] /Users/kevinleemans/.gradle/caches/transforms-1/files-1.1/android-jsc-r245459.aar/a30ff49c66b4329f408a58e036fe5eb6/AndroidManifest.xml:7:5-9:41
+MERGED from [:realm] /Users/kevinleemans/Bario/Bario/Front-end/bario_mobile/node_modules/realm/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:realm] /Users/kevinleemans/Bario/Bario/Front-end/bario_mobile/node_modules/realm/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:35.0.0] /Users/kevinleemans/.gradle/caches/transforms-1/files-1.1/react-native-35.0.0.aar/925c94dbeadd6aaf7553709c4b48e4ab/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:35.0.0] /Users/kevinleemans/.gradle/caches/transforms-1/files-1.1/react-native-35.0.0.aar/925c94dbeadd6aaf7553709c4b48e4ab/AndroidManifest.xml:7:5-9:41
 MERGED from [:unimodules-react-native-adapter] /Users/kevinleemans/Bario/Bario/Front-end/bario_mobile/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41

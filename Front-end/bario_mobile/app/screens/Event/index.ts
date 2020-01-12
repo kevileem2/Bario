@@ -1,3 +1,6 @@
+import { withStorage } from "../../utils/dataUtils"
 import Event from "./Event"
 
-export default Event
+const storageParams = [{ object: "Event" }]
+
+export default withStorage(storageParams)(Event)

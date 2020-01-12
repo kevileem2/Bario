@@ -83,6 +83,9 @@ PODS:
     - boost-for-react-native
     - DoubleConversion
     - glog
+  - GCDWebServer (3.5.3):
+    - GCDWebServer/Core (= 3.5.3)
+  - GCDWebServer/Core (3.5.3)
   - glog (0.3.5)
   - Google-Maps-iOS-Utils (2.1.0):
     - Google-Maps-iOS-Utils/Clustering (= 2.1.0)
@@ -173,6 +176,9 @@ PODS:
   - React/RCTWebSocket (0.59.8):
     - React/Core
     - React/RCTBlob
+  - RealmJS (3.6.0):
+    - GCDWebServer
+    - React
   - UMBarCodeScannerInterface (4.0.0)
   - UMCameraInterface (4.0.0)
   - UMConstantsInterface (4.0.0)
@@ -218,6 +224,7 @@ DEPENDENCIES:
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTVibration (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
+  - RealmJS (from `../node_modules/realm`)
   - UMBarCodeScannerInterface (from `../node_modules/unimodules-barcode-scanner-interface/ios`)
   - UMCameraInterface (from `../node_modules/unimodules-camera-interface/ios`)
   - UMConstantsInterface (from `../node_modules/unimodules-constants-interface/ios`)
@@ -245,6 +252,7 @@ SPEC REPOS:
     - FBAudienceNetwork
     - FBSDKCoreKit
     - FBSDKLoginKit
+    - GCDWebServer
     - Google-Maps-iOS-Utils
     - GoogleMaps
     - GoogleSignIn
@@ -295,6 +303,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   React:
     :path: "../node_modules/react-native"
+  RealmJS:
+    :path: "../node_modules/realm"
   UMBarCodeScannerInterface:
     :path: !ruby/object:Pathname
     path: "../node_modules/unimodules-barcode-scanner-interface/ios"
@@ -364,6 +374,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: d6655a343868d4bb5c29a60859bab07c3be14a0b
   FBSDKLoginKit: c5a623de88a6b0cda35b35582921f6cec2efcc36
   Folly: de497beb10f102453a1afa9edbf8cf8a251890de
+  GCDWebServer: c0ab22c73e1b84f358d1e2f74bf6afd1c60829f2
   glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
   Google-Maps-iOS-Utils: c32891ff472eaaa1fca032beedafa1a013af7875
   GoogleMaps: 55da829c68aa931f3ae982b9e341cc2f3d89c587
@@ -373,6 +384,7 @@ SPEC CHECKSUMS:
   JKBigInteger2: e91672035c42328c48b7dd015b66812ddf40ca9b
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   React: 841af16feb8e7936838a626bfa1b8faaa07d9e6c
+  RealmJS: ccaef6c07181c21bbafc227f184bc32065f6b27a
   UMBarCodeScannerInterface: d5a6fdc98ed6241225b0a8432a7f4e2b397668bc
   UMCameraInterface: 68870a3197fee85bd5afca5609ba4a5b7257d19d
   UMConstantsInterface: d25b8e8887ca7aaf568c06caf08f4d40734ee4ef
@@ -387,6 +399,6 @@ SPEC CHECKSUMS:
   UMTaskManagerInterface: 1e70fe58b872355f0ecb44fb81bb1a16484047f0
   yoga: 92b2102c3d373d1a790db4ab761d2b0ffc634f64
 
-PODFILE CHECKSUM: 5fb408d170201e383d43edb4cda4e6e523d1861f
+PODFILE CHECKSUM: b8a6f48065211dc41352518262c0167b063bcce0
 
 COCOAPODS: 1.8.4

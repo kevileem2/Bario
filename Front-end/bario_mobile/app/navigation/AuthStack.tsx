@@ -1,6 +1,7 @@
 import { createStackNavigator } from "react-navigation-stack"
 import { AuthLoadingScreen } from "../screens/Authentication/AuthLoadingScreen"
-import { AuthScreen } from "../screens/Authentication/AuthScreen"
+import Login from "../screens/Authentication/Login"
+import Register from "../screens/Authentication/Register"
 
 /**
  * Navigation stack for non-authenticated users
@@ -9,7 +10,7 @@ import { AuthScreen } from "../screens/Authentication/AuthScreen"
 export default createStackNavigator(
   {
     AuthLoading: AuthLoadingScreen,
-    Auth: AuthScreen
+    Login: Login
   },
   {
     initialRouteName: "AuthLoading"
