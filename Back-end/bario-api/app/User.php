@@ -22,6 +22,10 @@ class User extends Authenticatable
         'name', 'email', 'password', 'phone', 'address'
     ];
 
+    public function AuthAcessToken(){
+        return $this->hasMany('\App\Models\AuthAccessToken');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

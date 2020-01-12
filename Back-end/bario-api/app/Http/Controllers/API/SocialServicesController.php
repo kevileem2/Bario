@@ -54,7 +54,7 @@ class SocialServicesController extends Controller
             $extension = $request->file('image')->getClientOriginalExtension();
             $fileNameToStore = $fileName . '_' . time() . '.' . $extension;
 
-            $path = $request->file('image')->storeAs('public/socialServices', $fileNameToStore);
+            $request->file('image')->storeAs('public/socialServices', $fileNameToStore);
         } else {
             $fileNameToStore = 'noImage.jpg';
         }
