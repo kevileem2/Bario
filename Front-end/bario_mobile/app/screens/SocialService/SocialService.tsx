@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { View, ActivityIndicator } from "react-native"
 import { Container, List, ListItem } from "./components"
-import { Title, Subtitle, Text } from "_theme/typography"
-import { Colors } from "_theme"
+import { Typography } from "../../theme"
 
 import { api } from "../../config"
 import NavigationHeader from "../../shared/navigationHeader/NavigationHeader"
@@ -54,11 +53,13 @@ export default ({ navigation }) => {
       onRightFlingGesture={handleRightFlingGesture}
     >
       <Container>
-        <Title>Social Services</Title>
+        <Typography.Title>Social Services</Typography.Title>
         {data.length > 0 && (
           <View style={{ flex: 1, backgroundColor: "#eee" }}>
-            <Text style={{ position: "absolute" }}>{page}</Text>
-            {isError && <Text>Something went wrong</Text>}
+            <Typography.Text style={{ position: "absolute" }}>
+              {page}
+            </Typography.Text>
+            {isError && <Typography.Text>Something went wrong</Typography.Text>}
             {isLoading ? (
               <ActivityIndicator />
             ) : (
@@ -72,7 +73,9 @@ export default ({ navigation }) => {
                         item.id % 2 == 0 ? Colors.primary : Colors.darkPrimary
                     }}
                   >
-                    <Subtitle color={"#fff"}>{item.name}</Subtitle>
+                    <Typography.Subtitle color={"#fff"}>
+                      {item.name}
+                    </Typography.Subtitle>
                   </ListItem>
                 )}
                 onEndThreshold={7}

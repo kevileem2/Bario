@@ -1,6 +1,6 @@
 import React from "react"
 import { View } from "react-native"
-import Button from "_shared/Button"
+import { Button } from "../../shared"
 
 /**
  * Sign in or sign up
@@ -9,10 +9,10 @@ import Button from "_shared/Button"
 export const AuthScreen = ({ navigation }) => (
   <View>
     <Button
-      title="Sign in"
+      text="Sign in"
       onPress={() => navigation.navigate("SignIn")}
     ></Button>
-    <Button title="Sign up" onPress={() => navigation.navigate("SignUp")} />
-    <Button title="Skip" onPress={() => navigation.navigate("Home")} />
+    <Button text="Sign up" onPress={() => navigation.navigate("SignUp")} />
+    <Button text="Skip" onPress={() => navigation.navigate("Home")} />
   </View>
 )

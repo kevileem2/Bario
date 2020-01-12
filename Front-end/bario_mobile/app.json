@@ -4,7 +4,11 @@
     "slug": "bario_mobile",
     "privacy": "public",
     "sdkVersion": "35.0.0",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/bario_logo.png",
@@ -16,9 +20,25 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.barioMobile",
+      "publishBundlePath": "ios/bario/Supporting/shell-app.bundle",
+      "publishManifestPath": "ios/bario/Supporting/shell-app-manifest.json"
+    },
+    "isDetached": true,
+    "detach": {
+      "iosExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/ios-v2.13.0-sdk35.0.0-a30ebc9b-3db4-42f4-b677-e468076baf18.tar.gz",
+      "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v119-sdk35.0.0-6758e9de-1e10-40f8-863d-ec8972895cf1.tar.gz"
+    },
+    "scheme": "exp563d9ca10b44449ca1a0bb872048e688",
+    "android": {
+      "package": "com.barioMobile",
+      "publishBundlePath": "android/app/src/main/assets/shell-app.bundle",
+      "publishManifestPath": "android/app/src/main/assets/shell-app-manifest.json"
     }
   }
 }

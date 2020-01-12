@@ -1,4 +1,5 @@
-export { default as Spacer } from "./Spacer"
-export { default as BackgroundImage } from "./BackgroundImage"
-export { default as NavigationButton } from "./NavigationButton"
-export { default as Button } from './Button'
+import BackgroundImage from "./BackgroundImage"
+import Spacer from "./Spacer"
+import Button from "./Button"
+
+export { BackgroundImage, Spacer, Button }
