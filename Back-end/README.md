@@ -1,9 +1,9 @@
 # Bario Back-end Directory
 
-#### This is the back-end directory for the Bario App
+## This is the back-end directory for the Bario App
 
-###### Technologies
+### Technologies
 
-1. Laravel
+1. Laravel 5.8
 2. PHP
 3. Blade

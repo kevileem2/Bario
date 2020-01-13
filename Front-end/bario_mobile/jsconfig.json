@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "_assets": [
+                "app/assets/*"
+            ],
+            "_shared": [
+                "app/shared/*"
+            ],
+            "_navigation": [
+                "app/navigation/*"
+            ],
+            "_screens": [
+                "app/screens/*"
+            ],
+            "_theme": [
+                "app/theme/*"
+            ]
+        }
+    }
+}
